@@ -1,83 +1,27 @@
-# e-Commerce-App
-Complete Angular 11 from Zero to Hero 
+# ECommerceApp
 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
 
-Join Now Because it's time to get started The Angular Course with loads of Examples and projects.
+## Development server
 
-it's covers everything and will be contentiously updated. with more lectures every period.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
- Let's Build an Online Store real-world Single Page Applications  [Completed Project] from A-Z Step by Step, not just Theoretical and ABC examples.
+## Code scaffolding
 
-This course is recommended as it covers not only angular topics But additional material and concepts of Object orientated Programming and Data structure and Design Pattern 
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-The course Cover:-
+## Build
 
-Object-Oriented Programming
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-All Angular topics in one course.
+## Running unit tests
 
-Angular Component
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Angular Module
+## Running end-to-end tests
 
-Angular Directive
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-Angular Services
+## Further help
 
-Angular Routing
-
-State Management
-
-Angular view
-
-Angular pipe
-
-Connect with FireBase [ CRUD Operation ]
-
-Angular Authentication & Authorization
-
-JWT Token
-
-
-
-REST API, HTTP Request
-
-Dependency Injections
-
-Typescript 4.0
-
-Bootstrap 4.0 & Font-awesome
-
-interview questions with answers.
-
-Tips and tricks.
-
-Daily work tasks.
-
-Are There Lots of Examples?  There are loads of examples
-
-Pay once, benefit a lifetime! with 30 Days money-back guarantee. Certification after course completion
-
-
-
-This course is recommended as it covers not only angular topics But additional material and concepts of Object orientated Programming and Data structure and Design Pattern 
-
-
-
-This course is recommended as it covers not only angular topics But additional material and concepts of Object orientated Programming and Data structure and Design Pattern 
-
-
-
-This course is recommended as it covers not only angular topics But additional material and concepts of Object orientated Programming and Data structure and Design Pattern 
-
-
-
-This course is recommended as it covers not only angular topics But additional material and concepts of Object orientated Programming and Data structure and Design Pattern 
-
-
-
-This course is recommended as it covers not only angular topics But additional material and concepts of Object orientated Programming and Data structure and Design Pattern 
-
-
-
-This course is recommended as it covers not only angular topics But additional material and concepts of Object orientated Programming and Data structure and Design Pattern 
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
