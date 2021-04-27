@@ -9,6 +9,13 @@ export class NavbarComponent implements OnInit {
 
   constructor() { }
 
+  isOpen:boolean=false;
+
+  toggleNavVar()
+  {
+    this.isOpen = !this.isOpen;
+  }
+
   ngOnInit(): void {
   }
 
