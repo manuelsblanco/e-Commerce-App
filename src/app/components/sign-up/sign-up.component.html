@@ -1,1 +1,26 @@
-<p>sign-up works!</p>
+<div class="body">
+  <h2 class="text-center">
+    Sign Up
+  </h2>
+  <form #f="ngForm" (ngSubmit)="signUp(f)">
+    <input  ngModel name="name" type="text" #name="ngModel" class="form-control" placeholder="Name" required=""><br>
+    <div class="alert alert-danger" *ngIf="name.invalid && name.touched">Name is required</div>
+
+    <input ngModel name="email" #email="ngModel" type="email"  class="form-control" placeholder="E-mail" required><br>
+    <div class="alert alert-danger" *ngIf="email.errors?.invalid && email.touched">E-mail is required</div>
+
+    <input ngModel name="password"  #password="ngModel" type="password" class="form-control" placeholder="Password" required minlength="8"><br>
+    <div class="alert alert-danger" *ngIf="password.invalid && password.touched">Password is required</div>
+    <div class="alert alert-danger" *ngIf="password.errors?.minlength && password.touched">Password is less than 8 charater!</div>
+
+    <input ngModel name="confirmPassword" #confirmPassword="ngModel" type="password" class="form-control" placeholder="Confirm Password" required minlength="8"><br>
+    <div class="alert alert-danger" *ngIf="confirmPassword.errors?.required && confirmPassword.touched">Password is Required!</div>
+    <div class="alert alert-danger" *ngIf="password.errors?.minlength && password.touched">Password is less than 8 charater!</div>
+    <div class="alert alert-danger" *ngIf="password.value !== confirmPassword.value">Passwords are diferent!</div>
+
+
+    <input ngModel name="address" type="text" class="form-control" placeholder="Address" required><br>
+
+    <button   type="submit" class="btn btn-primary" [disabled]="f.invalid" >Create an account</button>
+  </form>
+</div>
