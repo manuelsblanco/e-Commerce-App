@@ -117,6 +117,10 @@
               "devServerTarget": "e-Commerce-App:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

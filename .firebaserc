@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ecommerceapp-fa53c": {
+      "hosting": {
+        "e-Commerce-App": [
+          "ecommerceapp-fa53c"
+        ]
+      }
+    }
+  }
+}
