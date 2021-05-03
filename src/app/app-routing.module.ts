@@ -8,18 +8,19 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { ProductsComponent } from './components/products/products.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import {LoginComponent} from './components/login/login.component';
 
 const routes: Routes =
 [
-  {path:'',       component: HomeComponent},
-  {path:'account', component: AccountComponent},
-  {path:'cart',    component: CartComponent},
-  {path:'login',   component: LogOutComponent},
-  {path:'logout',  component: LogOutComponent},
-  {path:'orders',  component: OrdersComponent},
-  {path:'products',component: ProductsComponent},
-  {path:'signup', component: SignUpComponent},
-  {path:'**',      component:NotFoundComponent}
+  {path: '',         component: HomeComponent},
+  {path: 'account',  component: AccountComponent},
+  {path: 'cart',     component: CartComponent},
+  {path: 'login',    component: LoginComponent},
+  {path: 'logout',   component: LogOutComponent},
+  {path: 'orders',   component: OrdersComponent},
+  {path: 'products', component: ProductsComponent},
+  {path: 'signup',   component: SignUpComponent},
+  {path: '**',       component: NotFoundComponent}
 ];
 
 @NgModule({
