@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AngularFireModule }  from '@angular/fire';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import {AngularFirestore, AngularFirestoreModule} from '@angular/fire/firestore';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -15,8 +15,14 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { ProductsComponent } from './components/products/products.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import {AngularFireAuth} from '@angular/fire/auth';
 
+
+
+
+
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +41,8 @@ import { FormsModule } from '@angular/forms'
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    AngularFirestoreModule,
+    AngularFireAuth,
     FormsModule,
     AngularFireModule.initializeApp(
       {
@@ -45,8 +53,7 @@ import { FormsModule } from '@angular/forms'
         messagingSenderId: '15603139647',
         appId: '1:15603139647:web:e97d4c097fa4a4f893e48a',
         measurementId: 'G-EJQ1T1JEHE'
-      }
-    )
+      }),
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]

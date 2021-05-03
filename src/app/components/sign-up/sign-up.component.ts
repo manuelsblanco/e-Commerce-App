@@ -12,6 +12,7 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // tslint:disable-next-line:typedef
   signUp(form)
   {
     console.log(form);
