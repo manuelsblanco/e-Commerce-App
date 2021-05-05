@@ -16,7 +16,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FormsModule } from '@angular/forms';
-import {AngularFireAuth} from '@angular/fire/auth';
+import {AngularFireAuthModule} from '@angular/fire/auth';
 
 
 
@@ -42,7 +42,7 @@ import {AngularFireAuth} from '@angular/fire/auth';
     AppRoutingModule,
     NgbModule,
     AngularFirestoreModule,
-    AngularFireAuth,
+    AngularFireAuthModule,
     FormsModule,
     AngularFireModule.initializeApp(
       {
