@@ -9,6 +9,7 @@ import firebase from 'firebase';
 export class AuthService {
 
   user: Observable<firebase.User>;
+  userId = '';
 
   constructor(private fauth: AngularFireAuth)
   {
