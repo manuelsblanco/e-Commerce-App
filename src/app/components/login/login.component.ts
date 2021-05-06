@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Form} from '@angular/forms';
+import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -8,15 +10,22 @@ import {Form} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private as: AuthService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  // tslint:disable-next-line:typedef
-  login(form: Form)
+
+  login(form): void
   {
-    console.log(form);
+    this.as.login(form.value.email, form.value.password)
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
+
+    this.router.navigate(['/']);
   }
+
+
 
 }

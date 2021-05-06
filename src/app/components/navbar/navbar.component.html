@@ -10,25 +10,25 @@
         <a class="nav-link" routerLink="/" routerLinkActive="Active">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/account" routerLinkActive="Active">Account</a>
+        <a class="nav-link" routerLink="/account" routerLinkActive="Active" *ngIf="isUser" >Account</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/cart" routerLinkActive="Active">Cart</a>
+        <a class="nav-link" routerLink="/cart" routerLinkActive="Active" *ngIf="isUser" >Cart</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/orders" routerLinkActive="Active">Orders</a>
+        <a class="nav-link" routerLink="/orders" routerLinkActive="Active" *ngIf="isUser" >Orders</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/products" routerLinkActive="Active">Products</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/login" routerLinkActive="Active">Login</a>
+        <a class="nav-link" routerLink="/login" routerLinkActive="Active" *ngIf="!isUser" >Login</a>
       </li>
       <li class="nav-item">
-        <a class="btn btn-success" routerLink="/signup" routerLinkActive="Active">Sign Up</a>
+        <a class="btn btn-success" routerLink="/signup" routerLinkActive="Active" *ngIf="!isUser" >Sign Up</a>
       </li>
       <li class="nav-item">
-        <a class="btn btn-danger" routerLink="/logout" routerLinkActive="Active">Log Out</a>
+        <a class="btn btn-danger" routerLink="/logout" routerLinkActive="Active" (click)='logout()' *ngIf="isUser">Log Out</a>
       </li>
     </ul>
   </div>

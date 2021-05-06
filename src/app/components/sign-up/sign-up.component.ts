@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
+import {UserService} from '../../services/user.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -9,7 +11,10 @@ import {AuthService} from '../../services/auth.service';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor(private as: AuthService) { }
+  errorMsg = '';
+  constructor(private as: AuthService,
+              private user: UserService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -17,12 +22,18 @@ export class SignUpComponent implements OnInit {
   // tslint:disable-next-line:typedef
   signUp(form)
   {
-    console.log(form.value.email);
-    console.log(form.value.password);
-
+    console.log(form.value.name);
+    console.log(form.value.address);
     this.as.signUp(form.value.email, form.value.password).
-      then(data => console.log(data)).
-      catch(err => console.log(err))
+      then
+      ( data =>
+        {
+          this.user.addNewUser(data.user.uid, form.value.name, form.value.address);
+          this.errorMsg = '';
+          this.router.navigate(['/']);
+        }
+      ).
+      catch(err => console.log( this.errorMsg  = err));
   }
 
 }

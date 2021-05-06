@@ -1,10 +1,10 @@
-<p>login works!</p>
+
 
 <h2 class="text-center">Login!</h2>
 
 <form #f="ngForm" (ngSubmit)="login(f)">
 
-  <input ngModel name="Email" #email="ngModel" type="email" class="form-control" required placeholder="Type your E-mail">
+  <input ngModel name="email" #email="ngModel" type="email" class="form-control" required placeholder="Type your E-mail">
 
   <div class="alert alert-danger" *ngIf="email.touched && email.errors?.required">
     The Email is required
@@ -13,7 +13,7 @@
     This is not the correct email format
   </div>
 
-  <input ngModel name="Password" #password="ngModel" type="password" class="form-control" required minlength="6" placeholder="Type your password">
+  <input ngModel name="password" #password="ngModel" type="password" class="form-control" required minlength="6" placeholder="Type your password">
   <div class="alert alert-danger" *ngIf="password.touched && password.errors?.required">
     The password is required
   </div>
@@ -22,6 +22,6 @@
   </div>
 
   <br>
-  <button class="btn btn-primary" [disabled]="f.invalid">Login</button>
+  <button class="btn btn-primary" [disabled]="f.invalid" (click)="login(f)">Login</button>
 
 </form>
