@@ -1,1 +1,22 @@
-<p>cart works!</p>
+<table class="table table-dark">
+  <thead>
+  <td>Product Name</td>
+  <td>Price</td>
+  <td>Amount</td>
+  <td>Total</td>
+  <td>Options</td>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let product of shoppingCart; index as i">
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td><input type="number" placeholder="Amount (kg)" [(ngModel)]="product.amount"  min="1"> </td>
+    <td>{{product.price * product.amount | currency}}</td>
+    <td>
+      <button class="btn btn-primary">Save</button>
+      <button class="btn badge-danger" (click)="deleteCart(i)" >Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
