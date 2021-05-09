@@ -1,1 +1,14 @@
-<p>account works!</p>
+<div >
+  <h2 class="text-center">Add new Product</h2>
+  <form #f="ngForm" (ngSubmit)="addNewProduct(f)">
+    <input type="text" class="form-control" name="name" ngModel placeholder="Name" required><br><br>
+
+    <input type="number"  class="form-control" name="price"  ngModel placeholder="Price" required><br><br>
+
+    <div>
+      <input type="file" ngModel name="image" required #image><br>
+
+      <input type="submit" value="add" class="btn btn-primary" [disabled]="f.invalid">
+    </div>
+  </form>
+</div>

@@ -30,7 +30,12 @@ export class CartComponent implements OnInit {
   // tslint:disable-next-line:typedef
   deleteCart(index)
   {
-    return this.cart.deleteFromCart(this.shoppingCart[index].id);
+   return this.cart.deleteFromCart(this.shoppingCart[index].id);
+  }
+  // tslint:disable-next-line:typedef
+  updateCart(index)
+  {
+    this.cart.updateFromCart(this.shoppingCart[index].id , this.shoppingCart[index].amount);
   }
 
 }

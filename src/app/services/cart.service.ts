@@ -16,20 +16,26 @@ export class CartService {
   // tslint:disable-next-line:typedef
   addToCart(product)
   {
-    return this.fs.collection('users/${this.as.userId}/cart').add(product);
+    return this.fs.collection('users/' + this.as.userId.toString() + '/cart').add(product);
   }
 
   // tslint:disable-next-line:typedef
   getCart()
   {
-
-    return this.fs.collection('users/${this.as.userId}/cart').snapshotChanges();
+    return this.fs.collection('users/' + this.as.userId.toString() + '/cart').snapshotChanges();
   }
 
   // tslint:disable-next-line:typedef
   deleteFromCart(id)
   {
-    return this.fs.doc('users/${this.as.userId}/cart/${id}').delete();
+    return this.fs.doc('users/' + this.as.userId.toString() + '/cart/' + id.toString()).delete();
   }
+
+  // tslint:disable-next-line:typedef
+  updateFromCart(id, amount)
+  {
+    return this.fs.doc('users/' + this.as.userId.toString() + '/cart/' + id.toString()).update({amount});
+  }
+
 }
 

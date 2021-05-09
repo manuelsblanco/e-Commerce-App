@@ -17,6 +17,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FormsModule } from '@angular/forms';
 import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+
 
 
 
@@ -42,6 +44,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
     AppRoutingModule,
     NgbModule,
     AngularFirestoreModule,
+    AngularFireStorageModule,
     AngularFireAuthModule,
     FormsModule,
     AngularFireModule.initializeApp(
