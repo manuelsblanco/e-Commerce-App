@@ -9,12 +9,13 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { ProductsComponent } from './components/products/products.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import {LoginComponent} from './components/login/login.component';
+import {GuardService} from './services/guard.service';
 
 const routes: Routes =
 [
   {path: '',         component: HomeComponent},
   {path: 'account',  component: AccountComponent},
-  {path: 'cart',     component: CartComponent},
+  {path: 'cart',     component: CartComponent, canActivate:[GuardService]},
   {path: 'login',    component: LoginComponent},
   {path: 'logout',   component: LogOutComponent},
   {path: 'orders',   component: OrdersComponent},

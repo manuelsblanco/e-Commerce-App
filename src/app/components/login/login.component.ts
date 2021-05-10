@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   login(form): void
   {
     this.as.login(form.value.email, form.value.password)
-      .then(data => console.log(data))
+      .then()
       .catch(err => console.log(err));
 
     this.router.navigate(['/']);

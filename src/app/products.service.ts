@@ -17,6 +17,24 @@ export class ProductsService {
   }
 
   // tslint:disable-next-line:typedef
+  getProducts()
+  {
+    return this.fs.collection('Products').snapshotChanges();
+  }
+
+  // tslint:disable-next-line:typedef
+  updateProducts(id, Price)
+  {
+    return this.fs.doc('Products/' + id.toString()).update({Price});
+  }
+
+  // tslint:disable-next-line:typedef
+  deleteProducts(id)
+  {
+    return this.fs.doc('Products/' + id.toString()).delete();
+  }
+
+  // tslint:disable-next-line:typedef
   addNewProducts(name: string, price: number, image: File)
   {
     // tslint:disable-next-line:typedef

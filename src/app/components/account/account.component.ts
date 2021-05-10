@@ -9,11 +9,35 @@ import {ProductsService} from '../../products.service';
 })
 export class AccountComponent implements OnInit {
 
+  ProductsArr: Array<any>;
+
   @ViewChild('image') image: ElementRef;
 
   constructor(private products: ProductsService) { }
 
   ngOnInit(): void {
+    this.products.getProducts().subscribe(cs =>
+    {
+      this.ProductsArr = cs.map(x =>
+      {
+        return{
+          id: x.payload.doc.id,
+          ...x.payload.doc.data() as {}
+        };
+      } );
+    });
+  }
+
+  // tslint:disable-next-line:typedef
+  updateProductsPrice(index)
+  {
+    this.products.updateProducts(this.ProductsArr[index].id, this.ProductsArr[index].price);
+  }
+
+  // tslint:disable-next-line:typedef
+  deleteProduct(index)
+  {
+    this.products.deleteProducts(this.ProductsArr[index].id);
   }
 
   // tslint:disable-next-line:typedef

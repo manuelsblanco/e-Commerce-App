@@ -11,4 +11,23 @@
       <input type="submit" value="add" class="btn btn-primary" [disabled]="f.invalid">
     </div>
   </form>
+
+  <h2 class="text-center">Update Price</h2><br>
+  <table class="table table-striped table-dark">
+    <td>Product Name</td>
+    <td>Product Price</td>
+    <td>Options</td>
+
+  <tbody>
+    <tr *ngFor="let product of ProductsArr; index as i">
+      <td>{{product.name}}</td>
+      <td><input type="number" placeholder="Price ($$)" [(ngModel)]="product.price" min="1">$</td>
+      <td>
+        <button class="btn btn-primary" (click)="updateProductsPrice(i)">Update</button>
+        <button class="btn btn-danger" (click)="deleteProduct(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+  </table>
+
 </div>

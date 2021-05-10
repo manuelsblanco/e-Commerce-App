@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '/Users/msb/WebstormProjects/e-Commerce-App/src/app/products.service';
 import {CartService} from '../../services/cart.service';
+import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +17,9 @@ export class HomeComponent implements OnInit {
 
 
   constructor(private ps: ProductsService,
-              private cart: CartService) { }
+              private cart: CartService,
+              private as: AuthService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.ps.getAllProducts().subscribe( data => this.Products = data );
@@ -37,9 +41,11 @@ export class HomeComponent implements OnInit {
   // tslint:disable-next-line:typedef
   addToCart(index)
   {
-    this.add = +index;
-    console.log('added', this.ps.getAllProducts().subscribe(data => this.Products = data
-    ));
+    if(this.as.userId){this.add = +index}
+    else {this.router.navigate(['/login']);}
+
+    // console.log('added', this.ps.getAllProducts().subscribe(data => this.Products = data
+    // ));
   }
 
 }
